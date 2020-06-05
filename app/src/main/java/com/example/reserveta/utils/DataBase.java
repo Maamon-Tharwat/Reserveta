@@ -2,6 +2,7 @@ package com.example.reserveta.utils;
 
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -33,6 +34,8 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.Calendar;
 
+import static android.content.ContentValues.TAG;
+
 public class DataBase {
 
 
@@ -61,40 +64,40 @@ public class DataBase {
     }
 
     public static void signUp(final Context context, final UserModel userData) {
-        auth=FirebaseAuth.getInstance();
+        auth = FirebaseAuth.getInstance();
         auth.addAuthStateListener(new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-                user=firebaseAuth.getCurrentUser();
+                user = firebaseAuth.getCurrentUser();
             }
         });
-        user=auth.getCurrentUser();
-        auth.createUserWithEmailAndPassword(userData.getEmail(),userData.getPassword())
+        user = auth.getCurrentUser();
+        auth.createUserWithEmailAndPassword(userData.getEmail(), userData.getPassword())
                 .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
                     @Override
                     public void onSuccess(AuthResult authResult) {
-                        Toast.makeText(context,"done1",Toast.LENGTH_SHORT).show();
-                        user=auth.getCurrentUser();
+                        Toast.makeText(context, "done1", Toast.LENGTH_SHORT).show();
+                        user = auth.getCurrentUser();
                         userData.setUID(user.getUid());
-                        database=FirebaseDatabase.getInstance();
-                        reference=database.getReference().child(context.getString(R.string.user)).child(userData.getUID());
+                        database = FirebaseDatabase.getInstance();
+                        reference = database.getReference().child(context.getString(R.string.user)).child(userData.getUID());
                         reference.setValue(userData);
                         auth.signOut();
-                        Toast.makeText(context,"done2",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(context, "done2", Toast.LENGTH_SHORT).show();
                         guide(context);
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(context,"not done1",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(context, "not done1", Toast.LENGTH_SHORT).show();
                     }
                 });
     }
 
-    public static void updateUser(Context context,DoctorModel user){
-        database=FirebaseDatabase.getInstance();
-        reference=database.getReference().child(context.getString(R.string.user)).child(user.getUID());
+    public static void updateUser(Context context, DoctorModel user) {
+        database = FirebaseDatabase.getInstance();
+        reference = database.getReference().child(context.getString(R.string.user)).child(user.getUID());
         reference.setValue(user);
 
     }
@@ -115,6 +118,7 @@ public class DataBase {
         if (user == null) {
             Intent intent;
             intent = new Intent(context, MainActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             context.startActivity(intent);
             return;
         }
@@ -124,6 +128,7 @@ public class DataBase {
                 Intent intent;
                 intent = new Intent(context, DoctorActivity.class);
                 intent.putExtra(context.getString(R.string.user), value);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 context.startActivity(intent);
             }
 
@@ -132,6 +137,7 @@ public class DataBase {
                 Intent intent;
                 intent = new Intent(context, PatientActivity.class);
                 intent.putExtra(context.getString(R.string.user), value);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 context.startActivity(intent);
             }
         });
@@ -218,7 +224,7 @@ public class DataBase {
 
     public static void getDoctorReservations(Context context, DoctorModel doctor, RecyclerView.Adapter adapter, ArrayList list) {
         database = FirebaseDatabase.getInstance();
-        reference = database.getReference().child(context.getString(R.string.reservations)).child(doctor.getUsername());
+          reference = database.getReference().child(context.getString(R.string.reservations)).child(doctor.getUsername());
         reference.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
