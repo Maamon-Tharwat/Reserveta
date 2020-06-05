@@ -1,0 +1,48 @@
+<resources>
+    <string name="app_name">Reserveta</string>
+    <string name="sign_in">sign in</string>
+    <string name="sign_up">sign up</string>
+    <string name="email">E-mail</string>
+    <string name="password">password</string>
+    <string name="type">Type</string>
+    <string name="doctor">Doctor</string>
+    <string name="patient">Patient</string>
+    <string name="phone">Phone</string>
+    <string name="username">Username</string>
+    <string name="user">User</string>
+    <string name="reservations">Reservations</string>
+    <string name="work_time">Set Schedule</string>
+    <string name="specialization">specialization</string>
+    <array name="SpecializationList">
+        <item>Specialization</item>
+        <item>Dermatology (Skin)</item>
+        <item>Dentistry (Teeth)</item>
+        <item>Psychiatry (Mental, Emotional or Behavioral Disorders)</item>
+        <item>Pediatrics and New Born (Child)</item>
+        <item>Neurology (Brain / Nerves)</item>
+        <item>Orthopedics (Bones)</item>
+        <item>Gynaecology and Infertility</item>
+        <item>Ear, Nose and Throat</item>
+        <item>Cardiology and Vascular Disease (Heart)</item>
+        <item>Allergy and Immunology (Sensitivity and Immunity)</item>
+        <item>Andrology and Male Infertility</item>
+        <item>Audiology</item>
+        <item>Cardiology and Thoracic Surgery (Heart / Chest)</item>
+        <item>Chest and Respiratory</item>
+        <item>Diabetes and Endocrinology</item>
+        <item>Diagnostic Radiology (Scan Centers)</item>
+        <item>Dietitian and Nutrition</item>
+        <item>Family Medicine</item>
+    </array>
+
+    <string name="sign_out">Sign out</string>
+    <string name="hours">Available hours</string>
+    <string name="doctor_schedule_start_hour">0</string>
+    <string name="doctor_schedule_end_hour">24</string>
+    <string name="submit">submit</string>
+    <string name="reserve">reserve</string>
+    <string name="time_format">\"EEE, dd MMM YYYY , HH:mm\"</string>
+    <string name="doctor_schedule_time_in_minutes">Time in minutes</string>
+    <string name="doctor_schedule_examination_time">Examination time</string>
+
+</resources>

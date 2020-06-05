@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.SignUpActivity"
+    android:orientation="vertical"
+    android:gravity="center">
+
+    <EditText
+        android:id="@+id/signup_username"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/username"
+        android:inputType="textPersonName"
+        android:autofillHints="username"
+        android:layout_margin="@dimen/signup_EditText"/>
+
+    <EditText
+        android:id="@+id/signup_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/email"
+        android:inputType="textEmailAddress"
+        android:autofillHints="email"
+        android:layout_margin="@dimen/signup_EditText"/>
+
+    <EditText
+        android:id="@+id/signup_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:autofillHints="password"
+        android:hint="@string/password"
+        android:inputType="textPassword"
+        android:layout_margin="@dimen/signup_EditText"/>
+
+    <EditText
+        android:id="@+id/signup_phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:autofillHints="phone"
+        android:hint="@string/phone"
+        android:inputType="phone"
+        android:layout_margin="@dimen/signup_EditText"/>
+
+    <RadioGroup
+        android:id="@+id/signup_type_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="@dimen/signup_EditText">
+
+        <TextView
+            android:id="@+id/signup_type_text"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/type"
+            android:textSize="@dimen/signup_TextSize"
+            android:layout_margin="@dimen/signup_type_group"/>
+
+        <RadioButton
+            android:id="@+id/signup_doctor"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/doctor"
+            android:textSize="@dimen/signup_TextSize"
+            android:layout_margin="@dimen/signup_type_group"/>
+
+        <RadioButton
+            android:id="@+id/signup_patient"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/patient"
+            android:textSize="@dimen/signup_TextSize"
+            android:layout_margin="@dimen/signup_type_group"/>
+
+    </RadioGroup>
+
+    <Spinner
+        android:id="@+id/signup_specialization"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:autofillHints="Specialization"
+        android:layout_margin="@dimen/signup_EditText"
+        android:entries="@array/SpecializationList"
+        android:visibility="gone"/>
+
+    <Button
+        android:id="@+id/signup_sign_up"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/sign_up"/>
+
+
+</LinearLayout>

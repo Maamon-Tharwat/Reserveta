@@ -1,0 +1,13 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="login_EditText">20dp</dimen>
+    <dimen name="signup_EditText">20dp</dimen>
+    <dimen name="signup_TextSize">20sp</dimen>
+    <dimen name="signup_type_group">5dp</dimen>
+    <dimen name="doctor_schedule_text_size">20sp</dimen>
+    <dimen name="doctor_schedule_margin">5dp</dimen>
+    <dimen name="patient_schedule_margin">5dp</dimen>
+    <dimen name="doctor_reservation_margin">10dp</dimen>
+</resources>

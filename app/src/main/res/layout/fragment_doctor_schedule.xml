@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="@dimen/doctor_schedule_margin"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".fragments.DoctorScheduleFragment">
+
+
+    <TextView
+        android:id="@+id/doctor_schedule_hours_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:text="@string/hours"
+        android:textSize="@dimen/doctor_schedule_text_size" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/doctor_schedule_margin"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/doctor_schedule_start_hour"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/doctor_schedule_margin"
+            android:text="@string/doctor_schedule_start_hour"
+            android:textSize="@dimen/doctor_schedule_text_size" />
+
+        <com.jaygoo.widget.RangeSeekBar
+            android:layout_margin="@dimen/doctor_schedule_margin"
+            app:rsb_indicator_text_size="@dimen/doctor_schedule_text_size"
+            android:id="@+id/doctor_schedule_available_hours"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            app:rsb_min="0"
+            app:rsb_max="24"/>
+
+        <TextView
+            android:id="@+id/doctor_schedule_end_hour"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/doctor_schedule_margin"
+            android:text="@string/doctor_schedule_end_hour"
+            android:textSize="@dimen/doctor_schedule_text_size" />
+
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_gravity="start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/doctor_schedule_margin"
+        android:text="@string/doctor_schedule_examination_time"
+        android:textSize="@dimen/doctor_schedule_text_size" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/doctor_schedule_margin"
+        android:orientation="horizontal">
+
+        <TextView
+            android:gravity="center"
+            android:id="@+id/doctor_schedule_minute"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/doctor_schedule_margin"
+            android:text="@string/doctor_schedule_time_in_minutes"
+            android:textSize="@dimen/doctor_schedule_text_size" />
+
+        <com.ramotion.fluidslider.FluidSlider
+            android:id="@+id/doctor_schedule_examination"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:start_text="10"
+            app:end_text="60"
+            app:size="small"
+            app:initial_position="0"/>
+
+
+    </LinearLayout>
+    <Button
+        android:id="@+id/doctor_schedule_submit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/doctor_schedule_margin"
+        android:text="@string/submit"
+        android:textSize="@dimen/doctor_schedule_text_size" />
+
+</LinearLayout>

@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "795303029154",
+    "firebase_url": "https://reserveta-b631c.firebaseio.com",
+    "project_id": "reserveta-b631c",
+    "storage_bucket": "reserveta-b631c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:795303029154:android:e5b2042477a64577e36afb",
+        "android_client_info": {
+          "package_name": "com.example.reserveta"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "795303029154-s20i2coqc7llkfb8tsp7q2uvabm6lf8v.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.reserveta",
+            "certificate_hash": "1866aadc9839bf7f7dc7feefe8ed86f281adcaab"
+          }
+        },
+        {
+          "client_id": "795303029154-9s1qupjspbvi547f3sfnnanphosplnvg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDOVHcTchLckMK2DdaUyD1VrlNQVBmheOI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "795303029154-9s1qupjspbvi547f3sfnnanphosplnvg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
