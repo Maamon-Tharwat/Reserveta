@@ -1,23 +1,18 @@
 package com.example.reserveta.fragments;
 
-import android.content.Context;
 import android.os.Bundle;
-
 import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
-
 import com.example.reserveta.R;
 import com.example.reserveta.model.DoctorModel;
 import com.example.reserveta.utils.DataBase;
 import com.jaygoo.widget.OnRangeChangedListener;
 import com.jaygoo.widget.RangeSeekBar;
 import com.ramotion.fluidslider.FluidSlider;
-
 import kotlin.Unit;
 
 public class DoctorScheduleFragment extends Fragment {

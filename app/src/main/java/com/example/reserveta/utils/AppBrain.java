@@ -1,17 +1,9 @@
 package com.example.reserveta.utils;
 
 import android.content.Context;
-import android.util.Log;
-
 import com.example.reserveta.R;
 import com.example.reserveta.model.DoctorModel;
-import com.example.reserveta.model.ReservationModel;
-
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.LocalDateTime;
-import java.time.ZoneOffset;
-import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 import java.util.Date;
 

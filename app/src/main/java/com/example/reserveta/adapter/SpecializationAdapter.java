@@ -37,15 +37,12 @@ public class SpecializationAdapter extends RecyclerView.Adapter<SpecializationAd
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
         holder.textView.setText(specialization.get(position));
-        holder.textView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent =new Intent(context, SpecializationDoctorsActivity.class);
-                intent.putExtra(context.getString(R.string.specialization),specialization.get(position));
-                intent.putExtra(context.getString(R.string.user),user);
-                context.startActivity(intent);
-                //Toast.makeText(context,specialization.get(position),Toast.LENGTH_SHORT).show();
-            }
+        holder.textView.setOnClickListener(v -> {
+            Intent intent =new Intent(context, SpecializationDoctorsActivity.class);
+            intent.putExtra(context.getString(R.string.specialization),specialization.get(position));
+            intent.putExtra(context.getString(R.string.user),user);
+            context.startActivity(intent);
+            //Toast.makeText(context,specialization.get(position),Toast.LENGTH_SHORT).show();
         });
     }
 

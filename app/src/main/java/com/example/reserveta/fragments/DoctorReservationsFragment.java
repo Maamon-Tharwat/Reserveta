@@ -21,7 +21,7 @@ import java.util.ArrayList;
 
 public class DoctorReservationsFragment extends Fragment {
 
-    DoctorModel user;
+    private DoctorModel user;
 
     public DoctorReservationsFragment(DoctorModel user) {
         this.user = user;

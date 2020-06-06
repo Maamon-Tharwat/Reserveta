@@ -18,15 +18,12 @@ public class LogInActivity extends AppCompatActivity {
         setContentView(R.layout.activity_log_in);
 
         Button login=findViewById(R.id.login_sign_in);
-        login.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                EditText username=findViewById(R.id.login_email);
-                EditText password=findViewById(R.id.login_password);
-                String email=username.getText().toString();
-                String strPassword=password.getText().toString();
-                DataBase.signIn(getApplicationContext(),email,strPassword);
-            }
+        login.setOnClickListener(v -> {
+            EditText username=findViewById(R.id.login_email);
+            EditText password=findViewById(R.id.login_password);
+            String email=username.getText().toString();
+            String strPassword=password.getText().toString();
+            DataBase.signIn(getApplicationContext(),email,strPassword);
         });
     }
 }

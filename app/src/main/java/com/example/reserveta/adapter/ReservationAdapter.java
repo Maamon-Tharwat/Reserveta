@@ -44,11 +44,11 @@ public class ReservationAdapter extends RecyclerView.Adapter<ReservationAdapter.
         return list.size();
     }
 
-    class ViewHolder extends RecyclerView.ViewHolder {
+    static class ViewHolder extends RecyclerView.ViewHolder {
         TextView paitentName;
         TextView reservationTime;
 
-        public ViewHolder(@NonNull View itemView) {
+        ViewHolder(@NonNull View itemView) {
             super(itemView);
             paitentName=itemView.findViewById(R.id.reservation_item_patient_name);
             reservationTime=itemView.findViewById(R.id.reservation_item_time);

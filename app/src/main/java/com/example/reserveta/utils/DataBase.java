@@ -48,51 +48,30 @@ public class DataBase {
     public static void signIn(final Context context, String username, String password) {
         auth = FirebaseAuth.getInstance();
         auth.signInWithEmailAndPassword(username, password)
-                .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
-                    @Override
-                    public void onSuccess(AuthResult authResult) {
-                        guide(context);
-                        Toast.makeText(context, "Log in successfully", Toast.LENGTH_SHORT).show();
-                    }
+                .addOnSuccessListener(authResult -> {
+                    guide(context);
+                    Toast.makeText(context, "Log in successfully", Toast.LENGTH_SHORT).show();
                 })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(context, e.getMessage(), Toast.LENGTH_SHORT).show();
-                    }
-                });
+                .addOnFailureListener(e -> Toast.makeText(context, e.getMessage(), Toast.LENGTH_SHORT).show());
     }
 
     public static void signUp(final Context context, final UserModel userData) {
         auth = FirebaseAuth.getInstance();
-        auth.addAuthStateListener(new FirebaseAuth.AuthStateListener() {
-            @Override
-            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-                user = firebaseAuth.getCurrentUser();
-            }
-        });
+        auth.addAuthStateListener(firebaseAuth -> user = firebaseAuth.getCurrentUser());
         user = auth.getCurrentUser();
         auth.createUserWithEmailAndPassword(userData.getEmail(), userData.getPassword())
-                .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
-                    @Override
-                    public void onSuccess(AuthResult authResult) {
-                        Toast.makeText(context, "done1", Toast.LENGTH_SHORT).show();
-                        user = auth.getCurrentUser();
-                        userData.setUID(user.getUid());
-                        database = FirebaseDatabase.getInstance();
-                        reference = database.getReference().child(context.getString(R.string.user)).child(userData.getUID());
-                        reference.setValue(userData);
-                        auth.signOut();
-                        Toast.makeText(context, "done2", Toast.LENGTH_SHORT).show();
-                        guide(context);
-                    }
+                .addOnSuccessListener(authResult -> {
+                    Toast.makeText(context, "done1", Toast.LENGTH_SHORT).show();
+                    user = auth.getCurrentUser();
+                    userData.setUID(user.getUid());
+                    database = FirebaseDatabase.getInstance();
+                    reference = database.getReference().child(context.getString(R.string.user)).child(userData.getUID());
+                    reference.setValue(userData);
+                    auth.signOut();
+                    Toast.makeText(context, "done2", Toast.LENGTH_SHORT).show();
+                    guide(context);
                 })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(context, "not done1", Toast.LENGTH_SHORT).show();
-                    }
-                });
+                .addOnFailureListener(e -> Toast.makeText(context, "not done1", Toast.LENGTH_SHORT).show());
     }
 
     public static void updateUser(Context context, DoctorModel user) {

@@ -40,15 +40,12 @@ public class SpecializationDoctorsAdapter extends RecyclerView.Adapter<Specializ
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.doctorName.setText(list.get(position).getUsername());
         final DoctorModel doctor=list.get(position);
-        holder.doctorName.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent =new Intent(context, ReservationActivity.class);
-                intent.putExtra(context.getString(R.string.doctor),doctor);
-                intent.putExtra(context.getString(R.string.user),user);
-                context.startActivity(intent);
+        holder.doctorName.setOnClickListener(v -> {
+            Intent intent =new Intent(context, ReservationActivity.class);
+            intent.putExtra(context.getString(R.string.doctor),doctor);
+            intent.putExtra(context.getString(R.string.user),user);
+            context.startActivity(intent);
 
-            }
         });
     }
 
